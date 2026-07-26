@@ -34,7 +34,7 @@ export async function onRequestPost(context) {
       {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+          "Authorization": `Bearer ${env.emai_key}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -44,7 +44,7 @@ export async function onRequestPost(context) {
 
           // 必须填写你的 Resend 注册邮箱
           to: [
-            "你的Resend注册邮箱@example.com"
+            "1821853561@qq.com"
           ],
 
           subject:
