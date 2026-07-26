@@ -28,3 +28,10 @@ dist-ssr
 dadi-contact-api/node_modules
 dadi-contact-api/.wrangler
 dadi-contact-api/.dev.vars
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
