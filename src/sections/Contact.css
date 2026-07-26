@@ -1,0 +1,104 @@
+.cta-section {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(219,234,254,0.28) 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(150,168,192,0.2);
+}
+
+.cta-glow {
+  position: absolute;
+  top: -180px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 360px;
+  background: radial-gradient(ellipse, rgba(147,197,253,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  max-width: 720px;
+}
+
+.cta-header { text-align: center; }
+.cta-header h2 {
+  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  color: var(--c-text);
+}
+.cta-header p {
+  color: var(--c-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Contact info cards ── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(150,168,192,0.28);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(50,70,100,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+  cursor: default;
+}
+a.contact-item {
+  cursor: pointer;
+}
+a.contact-item:hover {
+  border-color: rgba(37,99,235,0.35);
+  box-shadow: 0 10px 28px rgba(37,99,235,0.1), inset 0 1px 0 rgba(255,255,255,0.95);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contact-item strong {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.contact-item span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--c-text);
+}
+
+@media (max-width: 640px) {
+  .cta-content { gap: 32px; }
+  .contact-info { max-width: 100%; }
+  .contact-item { padding: 18px 16px; gap: 12px; }
+  .contact-icon { width: 32px; font-size: 1.25rem; }
+  .contact-item span { font-size: 0.92rem; word-break: break-word; }
+}

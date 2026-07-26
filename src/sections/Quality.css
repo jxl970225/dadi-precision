@@ -1,0 +1,304 @@
+.quality-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.quality-text .section-eyebrow,
+.quality-text .section-title { text-align: left; }
+
+.quality-text .section-title { margin-bottom: 20px; }
+
+.quality-desc {
+  color: var(--c-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.quality-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.quality-list li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.quality-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 0 8px rgba(37,99,235,0.35);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.quality-list strong { display: block; font-size: 0.92rem; margin-bottom: 4px; color: var(--c-text); }
+.quality-list p { font-size: 0.82rem; color: var(--c-muted); margin: 0; }
+
+.quality-visual {
+  display: flex;
+  justify-content: center;
+}
+
+/* Frosted glass card with metallic edge highlight */
+.quality-card {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(150,168,192,0.28);
+  border-radius: 20px;
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  min-width: 280px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(50,70,100,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+}
+/* Brushed highlight on top-left edge */
+.quality-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
+  pointer-events: none;
+}
+/* Subtle blue gradient wash */
+.quality-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(219,234,254,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.quality-metric { text-align: center; position: relative; z-index: 1; }
+
+/* Metallic silver gradient on the big numbers */
+.metric-value {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #1e3a56;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--c-muted);
+  margin-top: 6px;
+}
+
+@media (max-width: 1024px) {
+  .quality-layout { grid-template-columns: 1fr; gap: 48px; }
+  .quality-visual { display: block; }
+  .quality-card { flex-direction: row; justify-content: space-between; width: 100%; min-width: 0; }
+}
+
+@media (max-width: 640px) {
+  .quality-layout { gap: 32px; }
+  .quality-card { flex-direction: column; padding: 28px 24px; gap: 24px; }
+  .quality-list li { gap: 12px; }
+  .metric-value { font-size: 2rem; }
+}
+
+/* ── Gallery sections ── */
+.gallery-section {
+  margin-top: 24px;
+}
+
+/* 入口折叠卡片 - 已废弃，保留占位 */
+.gallery-entry { display: none; }
+.gallery-entry-text, .gallery-entry-count, .gallery-entry-arrow { display: none; }
+
+.gallery-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.gallery-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0 0 4px;
+}
+
+.gallery-desc {
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  margin: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(245,248,252,0.9);
+  border: 1px solid rgba(150,168,192,0.22);
+  border-radius: 14px;
+}
+
+/* 预览状态：只有1张图，容器跟图片等宽 */
+.gallery-grid--preview {
+  display: inline-grid;
+  grid-template-columns: 240px;
+  width: auto;
+}
+
+.gallery-item-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 遮罩覆盖在第一张图片上 */
+.gallery-overlay-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(10, 20, 40, 0.52);
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition: background 0.2s;
+}
+
+.gallery-overlay-btn:hover {
+  background: rgba(10, 20, 40, 0.68);
+}
+
+.gallery-overlay-count {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.gallery-overlay-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+/* 旧的 gallery-more-btn 已废弃 */
+.gallery-more-btn { display: none; }
+.gallery-more-icon, .gallery-more-label { display: none; }
+
+.gallery-collapse-btn {
+  display: block;
+  margin: 10px auto 0;
+  background: none;
+  border: 1px solid rgba(150,168,192,0.3);
+  border-radius: 8px;
+  padding: 6px 20px;
+  font-size: 0.82rem;
+  color: var(--c-muted);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.gallery-collapse-btn:hover {
+  border-color: var(--c-accent);
+  color: var(--c-text);
+}
+
+.gallery-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-item {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  display: block;
+  box-shadow: 0 2px 12px rgba(50,70,100,0.10);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(50,70,100,0.18);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10, 20, 40, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: 10px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 1.1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid--4,
+  .gallery-grid--3 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .gallery-title { font-size: 1.2rem; }
+}

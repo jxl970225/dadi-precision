@@ -1,0 +1,109 @@
+.quote-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(219,234,254,0.28) 100%);
+  border-top: 1px solid rgba(150,168,192,0.2);
+}
+
+.quote-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.quote-form {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(150,168,192,0.28);
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: 0 6px 24px rgba(50,70,100,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.quote-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.quote-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.quote-field .required {
+  color: #dc2626;
+}
+
+.quote-field input,
+.quote-field select,
+.quote-field textarea {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(100,116,139,0.28);
+  background: rgba(255,255,255,0.9);
+  color: var(--c-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.quote-field input:focus,
+.quote-field select:focus,
+.quote-field textarea:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.quote-field input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.quote-field input[type="file"] {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.quote-file-name {
+  font-size: 0.8rem;
+  color: var(--c-muted);
+}
+
+.quote-amount-group {
+  display: flex;
+  gap: 10px;
+}
+.quote-amount-group input {
+  flex: 1;
+  min-width: 0;
+}
+.quote-unit-select {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.quote-submit {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+.quote-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .quote-form { padding: 24px 20px; }
+  .quote-row { grid-template-columns: 1fr; gap: 16px; }
+}
