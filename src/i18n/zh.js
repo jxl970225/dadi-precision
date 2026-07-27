@@ -24,6 +24,7 @@ export default {
   "hero.cta1": "浏览产品",
   "hero.cta2": "获取报价",
   "hero.cta3": "联系我们",
+  "hero.stat0.label": "企业历史",
   "hero.stat1.label": "精度范围",
   "hero.stat2.label": "规格范围",
   "hero.stat3.label": "出口国家和地区",

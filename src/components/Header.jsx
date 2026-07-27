@@ -22,18 +22,9 @@ export default function Header() {
   };
 
   const applicationDomains = ['aerospace', 'auto', 'industrial', 'energy', 'marine', 'consumer'];
-  const productDomains = ['glass', 'ceramic', 'chrome', 'stainless', 'carbon', 'brass', 'disc', 'olive'];
 
   const navItems = [
     { key: 'nav.home',         href: '/' },
-    {
-      key: 'nav.products',
-      href: '/products',
-      children: productDomains.map(id => ({
-        key: `product.${id}.name`,
-        href: `/products#product-${id}`,
-      })),
-    },
     {
       key: 'nav.applications',
       href: '/applications',
@@ -47,7 +38,7 @@ export default function Header() {
     { key: 'nav.contact',      href: '/contact' },
   ];
 
-  const isRouteLink = href => href === '/converter' || href === '/technology' || href === '/' || href === '/products' || href === '/contact' || href.startsWith('/applications');
+  const isRouteLink = href => href === '/converter' || href === '/technology' || href === '/' || href === '/contact' || href.startsWith('/applications');
 
   const isActive = href => {
     if (href === '/') return pathname === '/';

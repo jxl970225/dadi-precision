@@ -24,6 +24,7 @@ export default {
   "hero.cta1": "Explore Products",
   "hero.cta2": "Get a Quote",
   "hero.cta3": "Get in Touch",
+  "hero.stat0.label": "Company History",
   "hero.stat1.label": "Precision Grade",
   "hero.stat2.label": "Size Range",
   "hero.stat3.label": "Export Markets",

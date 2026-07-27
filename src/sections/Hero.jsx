@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const stats = [
-  { value: 'Grade 5–Grade 1000', key: 'hero.stat1.label' },
-  { value: '0.5–300mm', key: 'hero.stat2.label' },
+  { value: '50+',      key: 'hero.stat0.label' },
+  { value: 'Grade 3', key: 'hero.stat1.label' },
+  { value: '0.3～300mm', key: 'hero.stat2.label' },
   { value: '38+',       key: 'hero.stat3.label' },
 ];
 
@@ -40,10 +41,21 @@ export default function Hero() {
             )}
           </h1>
           <p className="hero-desc">{t('hero.desc')}</p>
+        </div>
+
+        <div className="hero-visual-col">
+          <div className="hero-visual" aria-hidden="true">
+            <div className="logo-showcase">
+              <div className="logo-ring logo-ring--outer" />
+              <div className="logo-ring logo-ring--inner" />
+              <div className="logo-circle">
+                <img src="/images/logo.png" alt={t('brand')} className="hero-logo-img" />
+                <div className="logo-overlay" />
+              </div>
+            </div>
+          </div>
           <div className="hero-actions">
-            <Link to="/products" className="btn btn-primary">{t('hero.cta1')}</Link>
             <Link to="/#quote" className="btn btn-outline">{t('hero.cta2')}</Link>
-            <Link to="/#inquiry" className="btn btn-outline">{t('hero.cta3')}</Link>
           </div>
           <div className="hero-stats">
             {stats.map(s => (
@@ -52,17 +64,6 @@ export default function Hero() {
                 <span className="stat-label">{t(s.key)}</span>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="hero-visual" aria-hidden="true">
-          <div className="logo-showcase">
-            <div className="logo-ring logo-ring--outer" />
-            <div className="logo-ring logo-ring--inner" />
-            <div className="logo-circle">
-              <img src="/images/logo.png" alt={t('brand')} className="hero-logo-img" />
-              <div className="logo-overlay" />
-            </div>
           </div>
         </div>
       </div>

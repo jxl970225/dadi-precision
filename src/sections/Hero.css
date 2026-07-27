@@ -64,7 +64,7 @@
   z-index: 1;
 }
 
-.hero-content { flex: 1; max-width: 620px; }
+.hero-content { flex: 1; max-width: 920px; }
 
 .hero-eyebrow {
   font-size: 0.75rem;
@@ -92,18 +92,18 @@
 }
 
 .hero-desc {
-  font-size: 1.05rem;
+  font-size: 1.4rem;
   color: var(--c-muted);
   max-width: 520px;
-  margin-bottom: 36px;
-  line-height: 1.75;
+  line-height: 2;
 }
 
 .hero-actions {
   display: flex;
-  gap: 14px;
+  gap: 250px;
   flex-wrap: wrap;
-  margin-bottom: 56px;
+  justify-content: center;
+  margin-top: -50px;
 }
 
 .btn {
@@ -148,10 +148,11 @@
   display: flex;
   gap: 44px;
   flex-wrap: wrap;
+  justify-content: center;
   padding-top: 8px;
   border-top: 1px solid rgba(100,116,139,0.18);
 }
-.stat { display: flex; flex-direction: column; gap: 4px; padding-top: 20px; }
+.stat { display: flex; flex-direction: column; gap: 4px; padding-top: 20px; align-items: center; text-align: center; }
 .stat-number {
   font-size: 1.7rem;
   font-weight: 700;
@@ -161,8 +162,15 @@
 .stat-label { font-size: 0.78rem; color: var(--c-muted); letter-spacing: 0.03em; }
 
 /* ── Logo visual ── */
-.hero-visual {
+.hero-visual-col {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-visual {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,8 +273,8 @@
 
 @media (max-width: 1024px) {
   .hero-layout { gap: 24px; }
-  .hero-content { max-width: 56%; }
-  .hero-visual { flex: 0 0 auto; }
+  .hero-content { max-width: 66%; }
+  .hero-visual-col { flex: 0 0 auto; }
 }
 
 @media (max-width: 768px) {
@@ -278,18 +286,16 @@
     gap: 32px;
   }
   .hero-content { max-width: 100%; text-align: center; }
-  .hero-actions { justify-content: center; }
-  .hero-desc { font-size: 0.97rem; margin-left: auto; margin-right: auto; }
-  .hero-stats { gap: 20px; justify-content: center; }
+  .hero-desc { font-size: 1.4rem; margin-left: auto; margin-right: auto; }
   .stat-number { font-size: 1.4rem; }
-  .hero-visual { order: -1; }
+  .hero-visual-col { order: -1; }
   .logo-showcase { width: clamp(160px, 46vw, 300px); height: clamp(160px, 46vw, 300px); }
 }
 
 @media (max-width: 640px) {
-  .hero-actions { flex-direction: column; }
+  .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .hero-stats { gap: 16px; flex-wrap: wrap; justify-content: flex-start; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
   .stat { min-width: calc(50% - 8px); }
   .logo-showcase { width: clamp(140px, 42vw, 220px); height: clamp(140px, 42vw, 220px); }
 }

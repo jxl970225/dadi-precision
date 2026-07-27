@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './sections/Hero';
 import RequestQuote from './sections/RequestQuote';
-import Inquiry from './sections/Inquiry';
 import ConverterPage from './pages/ConverterPage';
 import TechnologyPage from './pages/TechnologyPage';
 import ApplicationsPage from './pages/ApplicationsPage';
@@ -16,7 +15,6 @@ function HomePage() {
     <>
       <Hero />
       <RequestQuote />
-      <Inquiry />
     </>
   );
 }

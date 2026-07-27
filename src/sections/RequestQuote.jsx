@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './RequestQuote.css';
 
-const PRODUCT_KEYS = ['chrome', 'stainless', 'carbon', 'brass', 'glass', 'ceramic', 'disc', 'olive'];
 const MATERIAL_KEYS = ['chrome', 'stainless', 'carbon', 'brass', 'glass', 'ceramic', 'nylon', 'tungsten', 'titanium', 'unsure'];
 const INDUSTRY_KEYS = ['aerospace', 'auto', 'industrial', 'energy', 'marine', 'consumer', 'unsure'];
 const UNIT_KEYS = ['pieces', 'kg'];
@@ -12,7 +11,6 @@ const initialForm = {
   company: '',
   email: '',
   phone: '',
-  product: '',
   material: '',
   industry: '',
   size: '',
@@ -62,7 +60,6 @@ export default function RequestQuote() {
       payload.append('email', form.email);
       payload.append('company', form.company);
       payload.append('phone', form.phone);
-      payload.append('product', form.product ? t(`product.${form.product}.name`) : '');
       payload.append('material', form.material ? t(`quote.material.${form.material}`) : '');
       payload.append('industry', form.industry ? t(`quote.industry.${form.industry}`) : '');
       payload.append('size', form.size);
@@ -154,15 +151,6 @@ export default function RequestQuote() {
 
           <div className="quote-row">
             <div className="quote-field">
-              <label htmlFor="quote-product">{t('quote.product')}</label>
-              <select id="quote-product" name="product" value={form.product} onChange={handleChange}>
-                <option value="">{t('quote.select_placeholder')}</option>
-                {PRODUCT_KEYS.map(k => (
-                  <option key={k} value={k}>{t(`product.${k}.name`)}</option>
-                ))}
-              </select>
-            </div>
-            <div className="quote-field">
               <label htmlFor="quote-material">{t('quote.material')}</label>
               <select id="quote-material" name="material" value={form.material} onChange={handleChange}>
                 <option value="">{t('quote.select_placeholder')}</option>
@@ -171,9 +159,6 @@ export default function RequestQuote() {
                 ))}
               </select>
             </div>
-          </div>
-
-          <div className="quote-row">
             <div className="quote-field">
               <label htmlFor="quote-industry">{t('quote.industry')}</label>
               <select id="quote-industry" name="industry" value={form.industry} onChange={handleChange}>
@@ -183,6 +168,9 @@ export default function RequestQuote() {
                 ))}
               </select>
             </div>
+          </div>
+
+          <div className="quote-row">
             <div className="quote-field">
               <label htmlFor="quote-size">{t('quote.size')}</label>
               <input
@@ -194,9 +182,6 @@ export default function RequestQuote() {
                 onChange={handleChange}
               />
             </div>
-          </div>
-
-          <div className="quote-row">
             <div className="quote-field">
               <label htmlFor="quote-grade">{t('quote.grade')}</label>
               <input
@@ -208,6 +193,9 @@ export default function RequestQuote() {
                 onChange={handleChange}
               />
             </div>
+          </div>
+
+          <div className="quote-row">
             <div className="quote-field">
               <label htmlFor="quote-amount">{t('quote.amount')}</label>
               <div className="quote-amount-group">

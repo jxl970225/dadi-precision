@@ -27,7 +27,7 @@ export default function Footer() {
             <h4>{t('footer.products')}</h4>
             <ul>
               {['chrome','stainless','carbon','brass','glass','ceramic'].map(id => (
-                <li key={id}><Link to={`/products#product-${id}`}>{t(`product.${id}.name`)}</Link></li>
+                <li key={id}><Link to={`/#product-${id}`}>{t(`product.${id}.name`)}</Link></li>
               ))}
             </ul>
           </div>
