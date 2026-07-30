@@ -56,6 +56,7 @@ export default function Hero() {
           </div>
           <div className="hero-actions">
             <Link to="/#quote" className="btn btn-outline">{t('hero.cta2')}</Link>
+            <Link to="/contact#inquiry" className="btn btn-outline">{t('hero.cta3')}</Link>
           </div>
           <div className="hero-stats">
             {stats.map(s => (
