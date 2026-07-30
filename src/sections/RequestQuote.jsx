@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './RequestQuote.css';
 
@@ -38,6 +38,7 @@ export default function RequestQuote() {
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState('idle');
   const [errors, setErrors] = useState({});
+  const fileInputRef = useRef(null);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -228,15 +229,26 @@ export default function RequestQuote() {
           </div>
 
           <div className="quote-field">
-            <label htmlFor="quote-file">{t('quote.file')}</label>
+            <label>{t('quote.file')}</label>
             <input
+              ref={fileInputRef}
               id="quote-file"
               name="attachment"
               type="file"
               accept="image/*,.pdf,.dwg,.dxf"
               onChange={handleFileChange}
+              className="quote-file-input"
             />
-            {file && <span className="quote-file-name">{file.name}</span>}
+            <button
+              type="button"
+              className="quote-file-trigger"
+              onClick={() => fileInputRef.current?.click()}
+            >
+              {t('quote.file.choose')}
+            </button>
+            <span className="quote-file-name">
+              {file ? file.name : t('quote.file.none')}
+            </span>
           </div>
 
           <div className="quote-field">

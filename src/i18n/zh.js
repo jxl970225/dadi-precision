@@ -121,6 +121,8 @@ export default {
   "quote.grade.placeholder": "例如：G5",
   "quote.amount": "需求数量",
   "quote.file": "上传图纸/图片（可选）",
+  "quote.file.choose": "选择文件",
+  "quote.file.none": "未选择任何文件",
   "quote.submit": "提交询价",
   "quote.select_placeholder": "请选择",
   "quote.material.unknown": "不清楚",
@@ -178,7 +180,7 @@ export default {
   "quote.unit.kg": "kg",
 
   "contact.phone.label": "电话",
-  "contact.phone.value": "+86 0633-2251088",
+  "contact.phone.value": "+8606335235286",
   "contact.phone2.label": "手机",
   "contact.phone2.value": "+86 171-8869-2058",
   "contact.email.label": "邮箱",
