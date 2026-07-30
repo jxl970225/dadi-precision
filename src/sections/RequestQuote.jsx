@@ -2,8 +2,20 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './RequestQuote.css';
 
-const MATERIAL_KEYS = ['chrome', 'stainless', 'carbon', 'brass', 'glass', 'ceramic', 'nylon', 'tungsten', 'titanium', 'unsure'];
-const INDUSTRY_KEYS = ['aerospace', 'auto', 'industrial', 'energy', 'marine', 'consumer', 'unsure'];
+const MATERIAL_KEYS = [
+  'unknown', 'help_choose',
+  '17-4ph', 'aluminum', 'bg42', 'brass', 'bronze', 'carbon-steel', 'carbon-steel-media',
+  'chrome-steel', 'copper', 'gold', 'glass', 'hastelloy', 'inconel', 'k-monel', 'm50',
+  'monel', 'niobium', 'nitinol-60', 'plastic', 'platinum', 'rex-20', 'rex-m4',
+  'rock-bit-tool-steel', 'silicon-nitride', 'silver', 'stainless-steel', 'stainless-steel-media',
+  'stellite', 'tantalum', 'tantalum-balls', 'titanium', 'trimrite', 'tool-steel',
+  'tungsten-carbide', 'other',
+];
+const INDUSTRY_KEYS = [
+  'unknown', 'aerospace', 'automotive', 'construction', 'consumer', 'cosmetics',
+  'electronics', 'heavy-equipment', 'jewelry', 'medical', 'military', 'toys',
+  'welding', 'other',
+];
 const UNIT_KEYS = ['pieces', 'kg'];
 
 const initialForm = {
