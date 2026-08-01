@@ -8,6 +8,7 @@ export default function Header() {
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
   const isZh = i18n.language === 'zh';
 
   useEffect(() => {
@@ -15,6 +16,11 @@ export default function Header() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobileSubmenuOpen(null);
+  }, [pathname]);
 
   const toggleLang = () => {
     i18n.changeLanguage(isZh ? 'en' : 'zh');
@@ -100,14 +106,26 @@ export default function Header() {
         <div className="mobile-menu">
           <ul>
             {navItems.map(({ key, href, children }) => (
-              <li key={key}>
-                {isRouteLink(href) ? (
-                  <Link to={href} className={isActive(href) ? 'active' : ''} onClick={() => setMenuOpen(false)}>{t(key)}</Link>
-                ) : (
-                  <a href={href} className={isActive(href) ? 'active' : ''} onClick={() => setMenuOpen(false)}>{t(key)}</a>
-                )}
+              <li key={key} className={children ? 'has-submenu' : ''}>
+                <div className="mobile-nav-row">
+                  {isRouteLink(href) ? (
+                    <Link to={href} className={isActive(href) ? 'active' : ''} onClick={() => setMenuOpen(false)}>{t(key)}</Link>
+                  ) : (
+                    <a href={href} className={isActive(href) ? 'active' : ''} onClick={() => setMenuOpen(false)}>{t(key)}</a>
+                  )}
+                  {children && (
+                    <button
+                      type="button"
+                      className={`mobile-submenu-toggle ${mobileSubmenuOpen === key ? 'open' : ''}`}
+                      aria-label="Toggle submenu"
+                      onClick={() => setMobileSubmenuOpen(v => (v === key ? null : key))}
+                    >
+                      <span aria-hidden="true">▾</span>
+                    </button>
+                  )}
+                </div>
                 {children && (
-                  <ul className="mobile-submenu">
+                  <ul className={`mobile-submenu ${mobileSubmenuOpen === key ? 'open' : ''}`}>
                     {children.map(child => (
                       <li key={child.key}>
                         <Link to={child.href} onClick={() => setMenuOpen(false)}>{t(child.key)}</Link>
