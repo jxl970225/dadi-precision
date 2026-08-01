@@ -1,0 +1,126 @@
+.service-card {
+  padding: 32px;
+  background: var(--c-surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.service-card-body h3 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  color: var(--c-text);
+}
+
+.service-card-body p {
+  margin: 0 0 20px;
+  color: var(--c-muted);
+  line-height: 1.75;
+}
+.service-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.service-card-subheading {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--c-primary, #2563eb);
+}
+
+.service-process {
+  margin: 0 0 20px;
+  padding: 20px;
+  background: rgba(37,99,235,0.04);
+  border-radius: 12px;
+}
+
+.service-process-title {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.service-process-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: process-step;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-process-step {
+  counter-increment: process-step;
+  display: flex;
+  gap: 12px;
+}
+
+.service-process-step::before {
+  content: counter(process-step);
+  flex: 0 0 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-process-step-name {
+  flex: 0 0 120px;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.service-process-step-desc {
+  flex: 1;
+  color: var(--c-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .service-process-step {
+    flex-wrap: wrap;
+  }
+  .service-process-step-name {
+    flex: 1 1 auto;
+  }
+}
+
+.service-pricing-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(150,168,192,0.2);
+}
+.service-pricing-item:last-child {
+  border-bottom: none;
+}
+
+.service-pricing-item-name {
+  color: var(--c-text);
+  font-weight: 500;
+}
+
+.service-pricing-item-price {
+  flex: 0 0 auto;
+  color: var(--c-primary, #2563eb);
+  font-weight: 600;
+  white-space: nowrap;
+}

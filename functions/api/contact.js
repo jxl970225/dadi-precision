@@ -63,7 +63,7 @@ export async function onRequestPost(context) {
 
   const emailPayload = {
     from: 'onboarding@resend.dev',
-    to: ['1821853561@qq.com'],
+    to: ['dadisteelball@outlook.com','wlshanshi@rz-public.sd.cninfo.net'],
     reply_to: email,
     subject: subject || `New Inquiry from ${name}`,
     html: `

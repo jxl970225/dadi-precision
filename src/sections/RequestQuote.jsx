@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import Dropdown from '../components/Dropdown';
 import './RequestQuote.css';
 
 const MATERIAL_KEYS = [
@@ -42,6 +43,10 @@ export default function RequestQuote() {
 
   const handleChange = e => {
     const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = name => value => {
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
@@ -165,21 +170,23 @@ export default function RequestQuote() {
           <div className="quote-row">
             <div className="quote-field">
               <label htmlFor="quote-material">{t('quote.material')}</label>
-              <select id="quote-material" name="material" value={form.material} onChange={handleChange}>
-                <option value="">{t('quote.select_placeholder')}</option>
-                {MATERIAL_KEYS.map(k => (
-                  <option key={k} value={k}>{t(`quote.material.${k}`)}</option>
-                ))}
-              </select>
+              <Dropdown
+                id="quote-material"
+                value={form.material}
+                onChange={handleSelectChange('material')}
+                placeholder={t('quote.select_placeholder')}
+                options={MATERIAL_KEYS.map(k => ({ value: k, label: t(`quote.material.${k}`) }))}
+              />
             </div>
             <div className="quote-field">
               <label htmlFor="quote-industry">{t('quote.industry')}</label>
-              <select id="quote-industry" name="industry" value={form.industry} onChange={handleChange}>
-                <option value="">{t('quote.select_placeholder')}</option>
-                {INDUSTRY_KEYS.map(k => (
-                  <option key={k} value={k}>{t(`quote.industry.${k}`)}</option>
-                ))}
-              </select>
+              <Dropdown
+                id="quote-industry"
+                value={form.industry}
+                onChange={handleSelectChange('industry')}
+                placeholder={t('quote.select_placeholder')}
+                options={INDUSTRY_KEYS.map(k => ({ value: k, label: t(`quote.industry.${k}`) }))}
+              />
             </div>
           </div>
 

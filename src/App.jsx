@@ -8,6 +8,7 @@ import RequestQuote from './sections/RequestQuote';
 import ConverterPage from './pages/ConverterPage';
 import TechnologyPage from './pages/TechnologyPage';
 import ApplicationsPage from './pages/ApplicationsPage';
+import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 
 function HomePage() {
@@ -48,6 +49,7 @@ export default function App() {
           <Route path="/converter" element={<ConverterPage />} />
           <Route path="/technology" element={<TechnologyPage />} />
           <Route path="/applications" element={<ApplicationsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>

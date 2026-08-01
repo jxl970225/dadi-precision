@@ -34,11 +34,12 @@ export default function Header() {
       })),
     },
     { key: 'nav.quality',      href: '/technology' },
+    { key: 'nav.services',     href: '/services' },
     { key: 'nav.converter',    href: '/converter' },
     { key: 'nav.contact',      href: '/contact' },
   ];
 
-  const isRouteLink = href => href === '/converter' || href === '/technology' || href === '/' || href === '/contact' || href.startsWith('/applications');
+  const isRouteLink = href => href === '/converter' || href === '/technology' || href === '/services' || href === '/' || href === '/contact' || href.startsWith('/applications');
 
   const isActive = href => {
     if (href === '/') return pathname === '/';
