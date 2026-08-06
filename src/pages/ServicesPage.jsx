@@ -16,7 +16,6 @@ const services = [
 ];
 
 const MANUFACTURING_STEPS = 9;
-const QUALITY_DOC_ITEMS = ['fair', 'ppap', 'coc'];
 
 export default function ServicesPage() {
   const { t } = useTranslation();
@@ -78,24 +77,6 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ol>
-                </div>
-              )}
-
-              {active.key === 'quality-documentation' && (
-                <div className="service-process">
-                  <h4 className="service-process-title">{t('service.quality-documentation.pricing.title')}</h4>
-                  <ul className="service-pricing-list">
-                    {QUALITY_DOC_ITEMS.map(item => (
-                      <li key={item} className="service-pricing-item">
-                        <span className="service-pricing-item-name">
-                          {t(`service.quality-documentation.pricing.${item}.name`)}
-                        </span>
-                        <span className="service-pricing-item-price">
-                          {t(`service.quality-documentation.pricing.${item}.price`)}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               )}
 

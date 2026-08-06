@@ -91,36 +91,3 @@
     flex: 1 1 auto;
   }
 }
-
-.service-pricing-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.service-pricing-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(150,168,192,0.2);
-}
-.service-pricing-item:last-child {
-  border-bottom: none;
-}
-
-.service-pricing-item-name {
-  color: var(--c-text);
-  font-weight: 500;
-}
-
-.service-pricing-item-price {
-  flex: 0 0 auto;
-  color: var(--c-primary, #2563eb);
-  font-weight: 600;
-  white-space: nowrap;
-}

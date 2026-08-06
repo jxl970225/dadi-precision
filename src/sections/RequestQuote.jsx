@@ -5,7 +5,7 @@ import './RequestQuote.css';
 
 const MATERIAL_KEYS = [
   'unknown', 'help_choose',
-  '17-4ph', 'aluminum', 'bg42', 'brass', 'bronze', 'carbon-steel', 'carbon-steel-media',
+  '17-4ph', 'aluminum', 'bg42', 'brass', 'carbon-steel', 'carbon-steel-media',
   'chrome-steel', 'copper', 'gold', 'glass', 'hastelloy', 'inconel', 'k-monel', 'm50',
   'monel', 'niobium', 'nitinol-60', 'plastic', 'platinum', 'rex-20', 'rex-m4',
   'rock-bit-tool-steel', 'silicon-nitride', 'silver', 'stainless-steel', 'stainless-steel-media',
@@ -14,7 +14,7 @@ const MATERIAL_KEYS = [
 ];
 const INDUSTRY_KEYS = [
   'unknown', 'aerospace', 'automotive', 'construction', 'consumer', 'cosmetics',
-  'electronics', 'heavy-equipment', 'jewelry', 'medical', 'military', 'toys',
+  'electronics', 'heavy-equipment', 'jewelry', 'medical', 'toys',
   'welding', 'other',
 ];
 const UNIT_KEYS = ['pieces', 'kg'];
