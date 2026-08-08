@@ -33,6 +33,11 @@ const apps = [
     img: '/images/apps/consumer.jpg',
     alt: 'Ball valve — consumer and plumbing products',
   },
+  {
+    key: 'cosmetics',
+    img: '/images/apps/cosmetics.jpg',
+    alt: 'Spray pump components — cosmetics packaging applications',
+  },
 ];
 
 export default function Applications() {
@@ -48,7 +53,7 @@ export default function Applications() {
         <div className="app-grid">
           {apps.map(a => (
             <div className="app-card" id={`app-${a.key}`} key={a.key}>
-              <div className="app-img-wrap">
+              <div className={`app-img-wrap ${a.key === 'cosmetics' ? 'app-img-wrap--contain' : ''}`}>
                 <img
                   src={a.img}
                   alt={a.alt}

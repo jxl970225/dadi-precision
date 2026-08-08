@@ -76,6 +76,8 @@ export default {
   "app.marine.desc": "Ship propulsion, rudder machinery and offshore equipment bearings",
   "app.consumer": "General Industrial",
   "app.consumer.desc": "Ball valves, precision instruments, data center fans and consumer products",
+  "app.cosmetics": "Cosmetics",
+  "app.cosmetics.desc": "Spray pump heads, actuator valves and precision packaging components",
 
   "services.eyebrow": "What We Offer",
   "services.title": "Services & Capabilities",

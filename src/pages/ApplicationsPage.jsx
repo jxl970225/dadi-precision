@@ -35,6 +35,11 @@ const apps = [
     img: '/images/apps/consumer.jpg',
     alt: 'Ball valve — consumer and plumbing products',
   },
+  {
+    key: 'cosmetics',
+    img: '/images/apps/cosmetics.jpg',
+    alt: 'Spray pump components — cosmetics packaging applications',
+  },
 ];
 
 export default function ApplicationsPage() {
@@ -75,7 +80,7 @@ export default function ApplicationsPage() {
           </ul>
 
           <div className="app-card" id={`app-${active.key}`}>
-            <div className="app-img-wrap">
+            <div className={`app-img-wrap ${active.key === 'cosmetics' ? 'app-img-wrap--contain' : ''}`}>
               <img
                 src={active.img}
                 alt={active.alt}

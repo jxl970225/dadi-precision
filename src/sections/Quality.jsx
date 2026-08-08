@@ -13,7 +13,7 @@ const certs = [
 
 const metrics = [
   { value: '50+',  key: 'quality.metric0' },
-  { value: 'G3～G1000', key: 'quality.metric1' },
+  { value: 'Grade3', key: 'quality.metric1' },
   { value: '0.3～300mm', key: 'quality.metric2' },
   { value: '38+',  key: 'quality.metric3' },
 ];

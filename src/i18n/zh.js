@@ -70,10 +70,12 @@ export default {
   "app.industrial.desc": "挖掘机、建筑机械及重型工业设备回转支承",
   "app.energy": "风力发电",
   "app.energy.desc": "海上风电主轴承、偏航与变桨轴承",
-  "app.marine": "船舶与海工",
+  "app.marine": "船舶与海事",
   "app.marine.desc": "船用推进系统、舵机及海洋工程设备轴承",
   "app.consumer": "通用工业",
   "app.consumer.desc": "球阀、精密仪器、数据中心散热风扇及消费品",
+  "app.cosmetics": "化妆品",
+  "app.cosmetics.desc": "喷雾泵头、按压阀芯及包装容器精密结构件",
 
   "services.eyebrow": "我们提供的服务",
   "services.title": "服务与能力",
