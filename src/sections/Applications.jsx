@@ -53,7 +53,7 @@ export default function Applications() {
         <div className="app-grid">
           {apps.map(a => (
             <div className="app-card" id={`app-${a.key}`} key={a.key}>
-              <div className={`app-img-wrap ${a.key === 'cosmetics' ? 'app-img-wrap--contain' : ''}`}>
+              <div className="app-img-wrap">
                 <img
                   src={a.img}
                   alt={a.alt}

@@ -80,7 +80,7 @@ export default function ApplicationsPage() {
           </ul>
 
           <div className="app-card" id={`app-${active.key}`}>
-            <div className={`app-img-wrap ${active.key === 'cosmetics' ? 'app-img-wrap--contain' : ''}`}>
+            <div className="app-img-wrap">
               <img
                 src={active.img}
                 alt={active.alt}

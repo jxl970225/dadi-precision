@@ -289,7 +289,7 @@
   .hero-desc { font-size: 1.4rem; margin-left: auto; margin-right: auto; }
   .stat-number { font-size: 1.4rem; }
   .hero-visual-col { order: -1; }
-  .logo-showcase { width: clamp(160px, 46vw, 300px); height: clamp(160px, 46vw, 300px); }
+  .logo-showcase { width: clamp(240px, 69vw, 450px); height: clamp(240px, 69vw, 450px); }
 }
 
 @media (max-width: 640px) {
@@ -297,5 +297,5 @@
   .hero-actions .btn { flex: 1; justify-content: center; }
   .hero-stats { gap: 16px; flex-wrap: wrap; }
   .stat { min-width: calc(50% - 8px); }
-  .logo-showcase { width: clamp(140px, 42vw, 220px); height: clamp(140px, 42vw, 220px); }
+  .logo-showcase { width: clamp(210px, 63vw, 330px); height: clamp(210px, 63vw, 330px); }
 }
